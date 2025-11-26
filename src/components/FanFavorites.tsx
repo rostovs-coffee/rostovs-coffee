@@ -29,8 +29,8 @@ const products = [
 
 const FanFavorites = () => {
   return (
-    <section className="px-4 sm:px-10 lg:px-20 py-5">
-      <h2 className="text-foreground text-2xl font-bold px-4 pb-3 pt-5">
+    <section className="page-section py-5">
+      <h2 className="section-subheading px-4 pb-3 pt-5">
         Fan Favorites
       </h2>
       <div className="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
