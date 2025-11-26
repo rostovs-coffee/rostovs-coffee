@@ -83,3 +83,81 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Common Design System Classes - Use these across all pages for consistency */
+@layer components {
+  /* Page Layout */
+  .page-section {
+    @apply px-4 sm:px-10 lg:px-20 py-10;
+  }
+  
+  .page-section-narrow {
+    @apply max-w-4xl mx-auto px-4;
+  }
+
+  /* Hero Styles - Use for all hero sections */
+  .hero-container {
+    @apply flex min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-4 text-center relative;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-[hsl(var(--hero-overlay))]/40 to-[hsl(var(--hero-overlay))]/70 rounded-xl;
+  }
+  
+  .hero-title {
+    @apply text-white text-4xl sm:text-6xl font-black leading-tight tracking-tight;
+  }
+  
+  .hero-subtitle {
+    @apply text-white/90 text-sm sm:text-lg font-normal;
+  }
+
+  /* Section Headings - Use for all section titles */
+  .section-heading {
+    @apply text-foreground text-3xl md:text-4xl font-bold leading-tight tracking-tight;
+  }
+  
+  .section-heading-primary {
+    @apply text-primary text-3xl font-bold leading-tight tracking-tight font-serif;
+  }
+  
+  .section-subheading {
+    @apply text-foreground text-2xl font-bold;
+  }
+
+  /* Body Text - Use for all body content */
+  .body-text {
+    @apply text-foreground/90 text-base leading-relaxed;
+  }
+  
+  .body-text-lg {
+    @apply text-foreground/90 text-lg leading-relaxed;
+  }
+  
+  .body-text-serif {
+    @apply font-serif text-lg leading-relaxed;
+  }
+
+  /* Cards - Use for card-based content */
+  .card-container {
+    @apply rounded-xl bg-card shadow-[0_4px_12px_rgba(0,0,0,0.05)];
+  }
+  
+  .card-muted {
+    @apply bg-muted/50 rounded-xl p-6;
+  }
+
+  /* CTA Sections - Use for call-to-action areas */
+  .cta-section {
+    @apply bg-secondary/80 rounded-xl p-8 sm:p-12 text-center flex flex-col items-center gap-6;
+  }
+  
+  .cta-section-primary {
+    @apply bg-primary/10 rounded-xl p-8 text-center;
+  }
+
+  /* Blockquotes - Use for featured quotes */
+  .blockquote {
+    @apply border-l-4 border-primary/50 pl-6 py-4 font-serif text-2xl italic leading-relaxed;
+  }
+}

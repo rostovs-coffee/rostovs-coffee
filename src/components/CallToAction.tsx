@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 
 const CallToAction = () => {
   return (
-    <section className="px-4 sm:px-10 lg:px-20 py-10">
-      <div className="bg-secondary/80 rounded-xl p-8 sm:p-12 text-center flex flex-col items-center gap-6">
-        <h2 className="text-3xl font-bold text-foreground">
+    <section className="page-section">
+      <div className="cta-section">
+        <h2 className="section-heading">
           Get Your Fresh Roast Today
         </h2>
         <p className="text-lg font-semibold text-foreground">

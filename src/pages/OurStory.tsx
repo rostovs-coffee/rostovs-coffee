@@ -11,17 +11,16 @@ const OurStory = () => {
         <div className="flex flex-col w-full max-w-4xl px-4">
           {/* Hero Section */}
           <section className="mb-12">
-            <div className="flex min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center relative overflow-hidden">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${storefrontImage})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-hero-overlay/60" />
+            <div 
+              className="hero-container overflow-hidden"
+              style={{ backgroundImage: `url(${storefrontImage})` }}
+            >
+              <div className="hero-overlay" />
               <div className="relative z-10 flex flex-col gap-2">
-                <h1 className="text-background font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+                <h1 className="hero-title">
                   Crafting Our Story Since 1979
                 </h1>
-                <h2 className="text-background/90 text-sm sm:text-base font-normal leading-normal">
+                <h2 className="hero-subtitle">
                   A family legacy in every bean.
                 </h2>
               </div>
@@ -76,10 +75,10 @@ const OurStory = () => {
             <div className="flex flex-col gap-12">
               {/* The Beginning Section */}
               <section>
-                <h2 className="text-3xl font-bold leading-tight tracking-tight font-serif text-primary">
+                <h2 className="section-heading-primary">
                   The Beginning (1979-80s)
                 </h2>
-                <div className="mt-4 space-y-4 font-serif text-lg leading-relaxed">
+                <div className="mt-4 space-y-4 body-text-serif">
                   <p>
                     It all started with a simple vision: to treat coffee roasting as an art form. Our founder, 
                     driven by a passion for consistent, flavorful beans, opened the first Rostov's Coffee & Tea 
@@ -109,8 +108,8 @@ const OurStory = () => {
               </section>
 
               {/* Quote Section */}
-              <section className="my-10 border-l-4 border-primary/50 pl-6 py-4">
-                <blockquote className="font-serif text-2xl italic leading-relaxed">
+              <section className="my-10 blockquote">
+                <blockquote>
                   "Coffee is more than a drink. It's an experience, a memory, a moment of warmth. 
                   We've always strived to be a part of that perfect moment."
                 </blockquote>
@@ -121,10 +120,10 @@ const OurStory = () => {
 
               {/* Growing with Community Section */}
               <section>
-                <h2 className="text-3xl font-bold leading-tight tracking-tight font-serif text-primary">
+                <h2 className="section-heading-primary">
                   Growing with the Community (1990s)
                 </h2>
-                <div className="mt-4 space-y-4 font-serif text-lg leading-relaxed">
+                <div className="mt-4 space-y-4 body-text-serif">
                   <p>
                     The 90s saw Rostov's become a local staple. We became the backdrop for first dates, 
                     study sessions, and quiet morning rituals. Our family grew, not just by blood, but by 
@@ -136,10 +135,10 @@ const OurStory = () => {
 
               {/* New Generation Section */}
               <section>
-                <h2 className="text-3xl font-bold leading-tight tracking-tight font-serif text-primary">
+                <h2 className="section-heading-primary">
                   A New Generation (2000s - Present)
                 </h2>
-                <div className="mt-4 space-y-4 font-serif text-lg leading-relaxed">
+                <div className="mt-4 space-y-4 body-text-serif">
                   <p>
                     As the new millennium dawned, the torch was passed to the next generation. We embraced 
                     new techniques and explored global flavors, but our core philosophy remained unchanged: 
@@ -150,7 +149,7 @@ const OurStory = () => {
 
                 {/* Team Members */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                  <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-xl">
+                  <div className="flex flex-col items-center text-center card-muted">
                     <div className="w-24 h-24 rounded-full bg-muted mb-4 ring-2 ring-primary/50 overflow-hidden">
                       <img 
                         className="w-full h-full object-cover" 
@@ -166,7 +165,7 @@ const OurStory = () => {
                     </p>
                   </div>
                   
-                  <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-xl">
+                  <div className="flex flex-col items-center text-center card-muted">
                     <div className="w-24 h-24 rounded-full bg-muted mb-4 ring-2 ring-primary/50 overflow-hidden">
                       <img 
                         className="w-full h-full object-cover" 
@@ -185,11 +184,11 @@ const OurStory = () => {
               </section>
 
               {/* CTA Section */}
-              <section className="mt-10 p-8 bg-primary/10 rounded-xl text-center">
-                <h2 className="text-3xl font-bold leading-tight tracking-tight font-serif text-primary">
+              <section className="mt-10 cta-section-primary">
+                <h2 className="section-heading-primary">
                   Taste the Legacy
                 </h2>
-                <p className="mt-2 max-w-2xl mx-auto font-serif text-lg leading-relaxed">
+                <p className="mt-2 max-w-2xl mx-auto body-text-serif">
                   Our story is best told through the taste of our coffee. Become a part of our journey.
                 </p>
                 <Button 
