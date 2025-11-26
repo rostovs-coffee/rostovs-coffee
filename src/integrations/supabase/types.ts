@@ -14,7 +14,333 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      addresses: {
+        Row: {
+          address_line1: string
+          address_line2: string | null
+          address_type: Database["public"]["Enums"]["address_type"]
+          city: string
+          created_at: string
+          id: string
+          is_default: boolean
+          state: string
+          updated_at: string
+          user_id: string
+          zip: string
+        }
+        Insert: {
+          address_line1: string
+          address_line2?: string | null
+          address_type: Database["public"]["Enums"]["address_type"]
+          city: string
+          created_at?: string
+          id?: string
+          is_default?: boolean
+          state: string
+          updated_at?: string
+          user_id: string
+          zip: string
+        }
+        Update: {
+          address_line1?: string
+          address_line2?: string | null
+          address_type?: Database["public"]["Enums"]["address_type"]
+          city?: string
+          created_at?: string
+          id?: string
+          is_default?: boolean
+          state?: string
+          updated_at?: string
+          user_id?: string
+          zip?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "addresses_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      order_items: {
+        Row: {
+          created_at: string
+          id: string
+          modifiers: Json | null
+          order_id: string
+          product_name: string
+          product_variant_id: string | null
+          quantity: number
+          unit_price: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          modifiers?: Json | null
+          order_id: string
+          product_name: string
+          product_variant_id?: string | null
+          quantity: number
+          unit_price: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          modifiers?: Json | null
+          order_id?: string
+          product_name?: string
+          product_variant_id?: string | null
+          quantity?: number
+          unit_price?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_items_product_variant_id_fkey"
+            columns: ["product_variant_id"]
+            isOneToOne: false
+            referencedRelation: "product_variants"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          clover_order_id: string
+          created_at: string
+          fulfillment_type: Database["public"]["Enums"]["fulfillment_type"]
+          id: string
+          shipping_cost: number
+          shipping_snapshot: Json | null
+          status: Database["public"]["Enums"]["order_status"]
+          total_amount: number
+          tracking_number: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          clover_order_id: string
+          created_at?: string
+          fulfillment_type: Database["public"]["Enums"]["fulfillment_type"]
+          id?: string
+          shipping_cost: number
+          shipping_snapshot?: Json | null
+          status?: Database["public"]["Enums"]["order_status"]
+          total_amount: number
+          tracking_number?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          clover_order_id?: string
+          created_at?: string
+          fulfillment_type?: Database["public"]["Enums"]["fulfillment_type"]
+          id?: string
+          shipping_cost?: number
+          shipping_snapshot?: Json | null
+          status?: Database["public"]["Enums"]["order_status"]
+          total_amount?: number
+          tracking_number?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      product_variants: {
+        Row: {
+          clover_item_id: string
+          created_at: string
+          id: string
+          name: string
+          price: number
+          product_id: string
+          sku: string
+          stock_quantity: number
+          updated_at: string
+          weight_oz: number
+        }
+        Insert: {
+          clover_item_id: string
+          created_at?: string
+          id?: string
+          name: string
+          price: number
+          product_id: string
+          sku: string
+          stock_quantity?: number
+          updated_at?: string
+          weight_oz: number
+        }
+        Update: {
+          clover_item_id?: string
+          created_at?: string
+          id?: string
+          name?: string
+          price?: number
+          product_id?: string
+          sku?: string
+          stock_quantity?: number
+          updated_at?: string
+          weight_oz?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_variants_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          is_active: boolean
+          name: string
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          name: string
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          name?: string
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          clover_customer_id: string | null
+          created_at: string
+          email: string
+          first_name: string | null
+          id: string
+          last_name: string | null
+          loyalty_points: number
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          clover_customer_id?: string | null
+          created_at?: string
+          email: string
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          loyalty_points?: number
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          clover_customer_id?: string | null
+          created_at?: string
+          email?: string
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          loyalty_points?: number
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          created_at: string
+          grind_preference: string | null
+          id: string
+          interval_weeks: number
+          last_order_date: string | null
+          next_billing_date: string
+          payment_token: string
+          product_variant_id: string
+          status: Database["public"]["Enums"]["sub_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          grind_preference?: string | null
+          id?: string
+          interval_weeks: number
+          last_order_date?: string | null
+          next_billing_date: string
+          payment_token: string
+          product_variant_id: string
+          status?: Database["public"]["Enums"]["sub_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          grind_preference?: string | null
+          id?: string
+          interval_weeks?: number
+          last_order_date?: string | null
+          next_billing_date?: string
+          payment_token?: string
+          product_variant_id?: string
+          status?: Database["public"]["Enums"]["sub_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subscriptions_product_variant_id_fkey"
+            columns: ["product_variant_id"]
+            isOneToOne: false
+            referencedRelation: "product_variants"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "subscriptions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +349,16 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      address_type: "billing" | "mailing"
+      fulfillment_type: "shipping" | "pickup"
+      order_status:
+        | "pending"
+        | "paid"
+        | "processing"
+        | "shipped"
+        | "picked_up"
+        | "cancelled"
+      sub_status: "active" | "paused" | "cancelled" | "past_due"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +485,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      address_type: ["billing", "mailing"],
+      fulfillment_type: ["shipping", "pickup"],
+      order_status: [
+        "pending",
+        "paid",
+        "processing",
+        "shipped",
+        "picked_up",
+        "cancelled",
+      ],
+      sub_status: ["active", "paused", "cancelled", "past_due"],
+    },
   },
 } as const
