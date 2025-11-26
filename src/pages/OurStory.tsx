@@ -75,10 +75,10 @@ const OurStory = () => {
             <div className="flex flex-col gap-12">
               {/* The Beginning Section */}
               <section>
-                <h2 className="section-heading-primary">
+                <h2 className="section-heading text-primary">
                   The Beginning (1979-80s)
                 </h2>
-                <div className="mt-4 space-y-4 body-text-serif">
+                <div className="mt-4 space-y-4 body-text">
                   <p>
                     It all started with a simple vision: to treat coffee roasting as an art form. Our founder, 
                     driven by a passion for consistent, flavorful beans, opened the first Rostov's Coffee & Tea 
@@ -108,8 +108,8 @@ const OurStory = () => {
               </section>
 
               {/* Quote Section */}
-              <section className="my-10 blockquote">
-                <blockquote>
+              <section className="my-10 border-l-4 border-primary/50 pl-6 py-4">
+                <blockquote className="text-xl italic leading-relaxed">
                   "Coffee is more than a drink. It's an experience, a memory, a moment of warmth. 
                   We've always strived to be a part of that perfect moment."
                 </blockquote>
@@ -120,10 +120,10 @@ const OurStory = () => {
 
               {/* Growing with Community Section */}
               <section>
-                <h2 className="section-heading-primary">
+                <h2 className="section-heading text-primary">
                   Growing with the Community (1990s)
                 </h2>
-                <div className="mt-4 space-y-4 body-text-serif">
+                <div className="mt-4 space-y-4 body-text">
                   <p>
                     The 90s saw Rostov's become a local staple. We became the backdrop for first dates, 
                     study sessions, and quiet morning rituals. Our family grew, not just by blood, but by 
@@ -135,10 +135,10 @@ const OurStory = () => {
 
               {/* New Generation Section */}
               <section>
-                <h2 className="section-heading-primary">
+                <h2 className="section-heading text-primary">
                   A New Generation (2000s - Present)
                 </h2>
-                <div className="mt-4 space-y-4 body-text-serif">
+                <div className="mt-4 space-y-4 body-text">
                   <p>
                     As the new millennium dawned, the torch was passed to the next generation. We embraced 
                     new techniques and explored global flavors, but our core philosophy remained unchanged: 
@@ -159,7 +159,7 @@ const OurStory = () => {
                     </div>
                     <h3 className="font-bold text-lg">David Rostov</h3>
                     <p className="text-sm text-muted-foreground">Head Roaster</p>
-                    <p className="text-sm mt-2 font-serif">
+                    <p className="text-sm mt-2">
                       "I grew up with the smell of roasting coffee. It's in my blood. My goal is to perfect 
                       the legacy my father built."
                     </p>
@@ -175,7 +175,7 @@ const OurStory = () => {
                     </div>
                     <h3 className="font-bold text-lg">Sarah Rostov</h3>
                     <p className="text-sm text-muted-foreground">Community Manager</p>
-                    <p className="text-sm mt-2 font-serif">
+                    <p className="text-sm mt-2">
                       "This shop is more than a business; it's our extended family's living room. I love 
                       hearing everyone's stories."
                     </p>
@@ -185,10 +185,10 @@ const OurStory = () => {
 
               {/* CTA Section */}
               <section className="mt-10 cta-section-primary">
-                <h2 className="section-heading-primary">
+                <h2 className="section-heading text-primary">
                   Taste the Legacy
                 </h2>
-                <p className="mt-2 max-w-2xl mx-auto body-text-serif">
+                <p className="mt-2 max-w-2xl mx-auto body-text-lg">
                   Our story is best told through the taste of our coffee. Become a part of our journey.
                 </p>
                 <Button 
